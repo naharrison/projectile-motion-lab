@@ -86,17 +86,21 @@ function draw() {
   text("t="+runningFrameCount, width/2, 20);
 
   fill(200, 50, 50);
-  text("X ("+(randx-margin)+", "+(height-margin-randy)+")", randx, randy);
+  text("X", randx, randy);
+  text("("+(randx-margin)+", "+(height-margin-randy)+")", randx+50, randy);
 }
 
 
 function drawGrid() {
   stroke(255);
-  strokeWeight(1);
   for(var k = 0; k < width/10; k++) {
+    strokeWeight(1);
+    if(k%10 == 0) strokeWeight(2);
     line(margin+k*10, 0, margin+k*10, height-margin);
   }
   for(var k = 0; k < height/10; k++) {
+    strokeWeight(1);
+    if(k%10 == 0) strokeWeight(2);
     line(margin, height-k*10-margin, width, height-k*10-margin);
   }
 }
